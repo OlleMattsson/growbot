@@ -1,13 +1,13 @@
 /*
-    GROW BOT 1.0
+    GROW BOT 0.1
 */
 
 // WIFI
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <ESPmDNS.h>
-const char *ssid = "stargate_";
-const char *password = "kneelb4yourgod";
+const char *ssid = "";
+const char *password = "";
 
 // DHT11
 #include "DHT.h"
@@ -58,15 +58,7 @@ int ECPin= A7; //A0;
 int ECGround= A3; //A1;
 int ECPower = A6; //A2;
 
-
-
-
 const int led = 13;
-
-
-
-
-
 
 void setup(void) {
   pinMode(led, OUTPUT);
@@ -164,7 +156,6 @@ void dataView() {
 
   // EC
   GetEC(); 
-  
   
   Serial.print("Humidity: ");
   Serial.print(humidity);
@@ -314,12 +305,6 @@ float getPh() {
   EC25 = EC/ (1 + TemperatureCoef * (tankTemp - 25.0));
   ppm = (EC25) * (PPMconversion * 1000);  
 }
-
-
-
-
-
-
 
 
 
